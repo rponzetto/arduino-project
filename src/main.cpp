@@ -10,10 +10,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  // check if this works rafaelo
-  printf("hey");
-  // hahahahahaha
-  // I MA HERE
+
+  // THIRD TEST
 }
 
 // put function definitions here:
