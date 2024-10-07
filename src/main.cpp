@@ -10,7 +10,7 @@ void setup() {
   int result = myFunction(2, 3);
 }
 
-void loop() {s
+void loop() {
   // put your main code here, to run repeatedly:
 }
 
