@@ -10,4 +10,5 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  // task is to multiply 2 numbers
 }
