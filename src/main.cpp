@@ -6,13 +6,19 @@
 //adriana
 #include <Arduino.h>
 
+// Parsa
+//adriana
+#include <Arduino.h>
+
 // put function declarations here:
 int SumFunction(int x, int y);
+int multiFunction(int a, int b);
 #define LED_PIN 10 
 
 void setup() {
   // put your setup code here, to run once:
   int result = SumFunction(2, 3);
+  int result2 = multiFunction(2, 3);
   pinMode(LED_PIN, OUTPUT);
 }
 
@@ -34,4 +40,14 @@ int SumFunction(int x, int y) {
     y = Serial.parseInt();
   }
   return x + y;
+}
+  int multiFunction(int a, int b) {
+  if (Serial.available() > 0)
+  {
+    Serial.println("Print a: ");
+    a = Serial.parseInt();
+    Serial.println("Print b; ");
+    b = Serial.parseInt();
+  }
+  return a * b;
 }
