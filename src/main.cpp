@@ -1,11 +1,11 @@
 #include <Arduino.h>
 
 // put function declarations here:
-int SumFunction(int x, int y);
+int sumFunction(int x, int y);
 
 void setup() {
   // put your setup code here, to run once:
-  int result = SumFunction(2, 3);
+  int result = sumFunction(2, 3);
 }
 
 void loop() {
@@ -13,12 +13,12 @@ void loop() {
 }
 
 //asks for 2 numbers and calculates the sum
-int SumFunction(int x, int y) {
+int sumFunction(int x, int y) {
   if (Serial.available() > 0)
   {
     Serial.println("Print x: ");
     x = Serial.parseInt();
-    Serial.println("Print y; ");
+    Serial.println("Print y: ");
     y = Serial.parseInt();
   }
   return x + y;
