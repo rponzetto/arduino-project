@@ -2,21 +2,34 @@
 
 
 // rafaelhjj
+// Parsa
+//adriana
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
-
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  int N1, N2; // Declare integers
+  int result;
+
+  Serial.print("Enter the first number: ");
+  N1 = GetIntNumber();  // Call custom function to get an integer
+  Serial.println(N1);   // Display first number
+
+  Serial.print("Enter the second number: ");
+  N2 = GetIntNumber();  // Call custom function to get an integer
+  Serial.println(N2);   // Display second number
+
+  result = N1 * N2;  // Multiply the two numbers
+  Serial.print("\nResult = "); // Heading
+  Serial.println(result);      // Display result
+  delay(500);
 }
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+// Function to read an integer from the Serial Monitor
+int GetIntNumber() {
+  while (Serial.available() == 0);  // Wait for input
+  return Serial.parseInt();         // Parse and return the integer
 }
