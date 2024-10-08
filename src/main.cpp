@@ -1,6 +1,3 @@
-// rafaelhjj
-// Parsa
-//adriana
 #include <Arduino.h>
 
 // Function declarations
@@ -23,16 +20,30 @@ void loop() {
   digitalWrite(LED_PIN, LOW);  // Turn the LED off
   delay(1000);
 
-  // Call SumFunction
-  int result = SumFunction();  // Get sum from user
-  Serial.print("Sum Result: ");
-  Serial.println(result);
+  // Menu
+  Serial.print("Press\n1 to calculate sum\n2 for multiplication\n");
+  int input;
+  do {
+    while(Serial.available() <= 0);
+    input = Serial.parseInt();
+  } while (input != 1 && input != 2);
 
-  // Call multiFunction
-  int result2 = multiFunction();  // Get product from user
-  Serial.print("Multiplication Result: ");
-  Serial.println(result2);
+  if (input == 1)
+  {
+    // Call SumFunction
+    int result = SumFunction();  // Get sum from user
+    Serial.print("Sum Result: ");
+    Serial.println(result);
+  }
 
+  else if (input == 2)
+  {
+    // Call multiFunction
+    int result2 = multiFunction();  // Get product from user
+    Serial.print("Multiplication Result: ");
+    Serial.println(result2);
+  }
+  
   delay(5000);  // Wait 5 seconds before the next interaction
 }
 
