@@ -10,10 +10,6 @@
 
 void setup() {
   // put your setup code here, to run once:
-  int num1;
-  int num2;
-  // put your setup code here, to run oncefs:
-  int result = myFunction(2, 3);
 }
 
 void loop() {
