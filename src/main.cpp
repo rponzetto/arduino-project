@@ -1,3 +1,4 @@
+
 #include <Arduino.h>
 
 // Function declarations
@@ -26,6 +27,7 @@ void loop() {
   do {
     while(Serial.available() <= 0);
     input = Serial.parseInt();
+    while (Serial.available() > 0) Serial.read();
   } while (input != 1 && input != 2);
 
   if (input == 1)
@@ -55,11 +57,15 @@ int SumFunction() {
   while (Serial.available() == 0);  // Wait for input
   x = Serial.parseInt();            // Get the first number
   Serial.println(x);                // Echo the first number
+  while (Serial.available() > 0) Serial.read();
+  delay(500);
 
   Serial.println("Enter second number (for sum): ");
   while (Serial.available() == 0);  // Wait for input
   y = Serial.parseInt();            // Get the second number
   Serial.println(y);                // Echo the second number
+  while (Serial.available() > 0) Serial.read();
+  delay(500);
 
   return x + y;  // Return the sum
 }
@@ -72,11 +78,15 @@ int multiFunction() {
   while (Serial.available() == 0);  // Wait for input
   a = Serial.parseInt();            // Get the first number
   Serial.println(a);                // Echo the first number
+  while (Serial.available() > 0) Serial.read();
+  delay(500);
 
   Serial.println("Enter second number (for multiplication): ");
   while (Serial.available() == 0);  // Wait for input
   b = Serial.parseInt();            // Get the second number
   Serial.println(b);                // Echo the second number
+  while (Serial.available() > 0) Serial.read();
+  delay(500);
 
   return a * b;  // Return the product
 }
