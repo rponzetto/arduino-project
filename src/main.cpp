@@ -1,3 +1,9 @@
+
+
+
+// rafaelhjj
+// Parsa
+//adriana
 #include <Arduino.h>
 
 // put function declarations here:
@@ -5,11 +11,12 @@ int sumFunction(int x, int y);
 
 void setup() {
   // put your setup code here, to run once:
-  int result = sumFunction(2, 3);
+
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  // task is to multiply 2 numbers
 }
 
 //asks for 2 numbers and calculates the sum
