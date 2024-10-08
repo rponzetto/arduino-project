@@ -1,21 +1,25 @@
 #include <Arduino.h>
 
 // put function declarations here:
-int myFunction(int, int);
+int SumFunction(int x, int y);
 
 void setup() {
   // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  int result = SumFunction(2, 3);
 }
-
- //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
- ///jghghhkh
 
 void loop() {
   // put your main code here, to run repeatedly:
 }
 
-// put function definitions here:
-int myFunction(int x, int y) {
+//asks for 2 numbers and calculates the sum
+int SumFunction(int x, int y) {
+  if (Serial.available() > 0)
+  {
+    Serial.println("Print x: ");
+    x = Serial.parseInt();
+    Serial.println("Print y; ");
+    y = Serial.parseInt();
+  }
   return x + y;
 }
